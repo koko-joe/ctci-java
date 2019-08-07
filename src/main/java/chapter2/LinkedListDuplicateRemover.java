@@ -1,4 +1,4 @@
-package chapter2.ctci.rkokott.de;
+package chapter2;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

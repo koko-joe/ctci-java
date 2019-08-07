@@ -1,6 +1,5 @@
-import chapter3.ctci.rkokott.de.FullStackException;
-import chapter3.ctci.rkokott.de.IllegalStackNumberException;
-import chapter3.ctci.rkokott.de.MultiStackArray;
+package chapter3;
+
 import org.junit.jupiter.api.*;
 
 class MultiStackArrayTest {

@@ -1,4 +1,4 @@
-package chapter3.ctci.rkokott.de;
+package chapter3;
 
 public class FullStackException extends Throwable {
 

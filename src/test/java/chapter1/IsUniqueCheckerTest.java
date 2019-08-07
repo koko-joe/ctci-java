@@ -1,4 +1,5 @@
-import chapter1.ctci.rkokott.de.IsUniqueChecker;
+package chapter1;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

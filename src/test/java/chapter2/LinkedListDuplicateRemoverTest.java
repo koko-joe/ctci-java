@@ -1,4 +1,5 @@
-import chapter2.ctci.rkokott.de.LinkedListDuplicateRemover;
+package chapter2;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

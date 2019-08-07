@@ -1,4 +1,4 @@
-package chapter1.ctci.rkokott.de;
+package chapter1;
 
 /*
 Chapter 1
