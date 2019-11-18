@@ -1,10 +1,9 @@
 package chapter16;
 
-import javax.annotation.Nullable;
-
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Optional;
 
 /*
 Chapter 16
@@ -26,13 +25,13 @@ public class LeastRecentlyUsedCache<Key, Value> {
         values = new HashMap<>(size);
     }
 
-    public @Nullable Value getValueByKey(Key key) {
+    public Optional<Value> getValueByKey(Key key) {
         if (! values.containsKey(key)) {
-            return null;
+            return Optional.empty();
         }
         keyList.remove(key);
         keyList.addFirst(key);
-        return values.get(key);
+        return Optional.ofNullable(values.get(key));
     }
 
     private void removeLeastRecentlyUsedValue() {

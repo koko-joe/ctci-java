@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 class LeastRecentlyUsedCacheTest {
 
     private LeastRecentlyUsedCache<Integer, String> lruCache;
@@ -17,8 +19,8 @@ class LeastRecentlyUsedCacheTest {
 
     @Test
     void testThatEmptyCacheReturnsNull() {
-        String result = lruCache.getValueByKey(1);
-        Assertions.assertNull(result);
+        Optional<String> result = lruCache.getValueByKey(1);
+        Assertions.assertFalse(result.isPresent());
     }
 
     @Test
@@ -26,9 +28,9 @@ class LeastRecentlyUsedCacheTest {
         Integer key = 11;
         String value = "existing";
         lruCache.insertValue(key, value);
-        String result = lruCache.getValueByKey(key);
+        Optional<String> result = lruCache.getValueByKey(key);
 
-        Assertions.assertEquals(value, result);
+        Assertions.assertEquals(value, result.orElse(value + "different"));
     }
 
     @Test
@@ -36,8 +38,8 @@ class LeastRecentlyUsedCacheTest {
         for (int i = 0; i < cacheSize; ++i) {
             lruCache.insertValue(i, String.valueOf(i));
         }
-        String result = lruCache.getValueByKey(cacheSize);
-        Assertions.assertNull(result);
+        Optional<String> result = lruCache.getValueByKey(cacheSize);
+        Assertions.assertFalse(result.isPresent());
     }
 
     @Test
@@ -45,8 +47,8 @@ class LeastRecentlyUsedCacheTest {
         for (int i = 0; i <= cacheSize; ++i) {
             lruCache.insertValue(i, String.valueOf(i));
         }
-        String result = lruCache.getValueByKey(0);
-        Assertions.assertNull(result);
+        Optional<String> result = lruCache.getValueByKey(0);
+        Assertions.assertFalse(result.isPresent());
     }
 
     @Test
@@ -54,7 +56,7 @@ class LeastRecentlyUsedCacheTest {
         for (int i = 0; i <= cacheSize; ++i) {
             lruCache.insertValue(i, String.valueOf(i));
         }
-        String result = lruCache.getValueByKey(cacheSize);
-        Assertions.assertEquals(String.valueOf(cacheSize), result);
+        Optional<String> result = lruCache.getValueByKey(cacheSize);
+        Assertions.assertEquals(String.valueOf(cacheSize), result.orElse("0"));
     }
 }
