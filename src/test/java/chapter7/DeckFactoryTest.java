@@ -24,7 +24,7 @@ class DeckFactoryTest {
     @Test
     void testThatAllCardsAreInDeck() {
         LinkedList<Card> deck = deckFactory.createShuffledDeck();
-        LinkedList<Card> possibleCards = new LinkedList<Card>();
+        LinkedList<Card> possibleCards = new LinkedList<>();
 
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {

@@ -35,7 +35,7 @@ public class BlackJackGame {
         boolean continueGame = confirmRestart();
         while (continueGame) {
             LinkedList<Card> deck = deckFactory.createShuffledDeck();
-            LinkedList<Card> hand = new LinkedList<Card>();
+            LinkedList<Card> hand = new LinkedList<>();
             while (true) {
                 final int currentScore = getScore(hand);
                 System.out.println("Your current score is: " + currentScore);

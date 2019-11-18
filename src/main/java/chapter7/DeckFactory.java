@@ -6,7 +6,7 @@ import java.util.LinkedList;
 class DeckFactory {
 
     LinkedList<Card> createShuffledDeck() {
-        LinkedList<Card> deck = new LinkedList<Card>();
+        LinkedList<Card> deck = new LinkedList<>();
         for (Suit suit:Suit.values()) {
             for (Rank rank: Rank.values()) {
                 deck.add(new Card(suit, rank));

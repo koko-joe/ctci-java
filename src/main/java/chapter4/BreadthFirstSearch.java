@@ -25,8 +25,8 @@ public class BreadthFirstSearch {
             return true;
         }
 
-        Set<Node> visitedNodes = new HashSet<Node>();
-        LinkedList<Node> nodes = new LinkedList<Node>(graph.getAdjacentNodes(startNode));
+        Set<Node> visitedNodes = new HashSet<>();
+        LinkedList<Node> nodes = new LinkedList<>(graph.getAdjacentNodes(startNode));
         while (! nodes.isEmpty()) {
             Node currentNode = nodes.removeFirst();
             if (currentNode == endNode) {

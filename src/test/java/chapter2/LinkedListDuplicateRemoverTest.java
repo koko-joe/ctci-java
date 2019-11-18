@@ -20,7 +20,7 @@ class LinkedListDuplicateRemoverTest {
 
     @Test
     void testEmptyList() {
-        LinkedList<Integer> emptyList = new LinkedList<Integer>();
+        LinkedList<Integer> emptyList = new LinkedList<>();
         remover.removeDuplicates(emptyList);
         Assertions.assertEquals(emptyList.size(), 0);
     }
@@ -28,7 +28,7 @@ class LinkedListDuplicateRemoverTest {
     @Test
     void testListWithoutDuplicate() {
         Integer[] originalIntegers = {1,2,3,4,5,6,7,8,9,10};
-        LinkedList<Integer> list = new LinkedList<Integer>(Arrays.asList(originalIntegers));
+        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(originalIntegers));
         remover.removeDuplicates(list);
         Assertions.assertEquals(list.size(), originalIntegers.length);
         for (Integer value : originalIntegers) {
@@ -39,8 +39,8 @@ class LinkedListDuplicateRemoverTest {
     @Test
     void testListWithDuplicates() {
         Integer[] originalIntegers = {1,2,1,3,4,5,3,6,7,8,9,10};
-        Set<Integer> integerSet = new HashSet<Integer>(Arrays.asList(originalIntegers));
-        LinkedList<Integer> list = new LinkedList<Integer>(Arrays.asList(originalIntegers));
+        Set<Integer> integerSet = new HashSet<>(Arrays.asList(originalIntegers));
+        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(originalIntegers));
         remover.removeDuplicates(list);
         Assertions.assertEquals(list.size(), integerSet.size());
         for (Integer value : integerSet) {
