@@ -7,7 +7,7 @@ Question 1
 Tests if a string contains only unique characters.
 Assumptions: only ASCII characters are used, lowercase and uppercase characters are not the same
  */
-public class IsUniqueChecker {
+public class UniquenessChecker {
 
     public boolean hasOnlyUniqueCharacters(String inputString) {
         final int characterRange = 256;

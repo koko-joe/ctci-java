@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class IsUniqueCheckerTest {
+class UniquenessCheckerTest {
 
-    private static IsUniqueChecker isUniqueChecker;
+    private static UniquenessChecker isUniqueChecker;
 
     @BeforeAll
     static void setup() {
-        isUniqueChecker = new IsUniqueChecker();
+        isUniqueChecker = new UniquenessChecker();
     }
 
     @Test
