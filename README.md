@@ -4,5 +4,5 @@ Assumptions are documented in the comments.
 Each solution has a unit test.
 Some edge cases (especially user input errors) are untested because their behaviour is undefined.
 
-## Installation
-mvn clean install
+## How to run test
+mvn test
