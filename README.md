@@ -4,5 +4,7 @@ Assumptions are documented in the comments.
 Each solution has a unit test.
 Some edge cases (especially user input errors) are untested because their behaviour is undefined.
 
-## How to run test
-mvn test
+## Installation
+1. install Java 8+
+1. install Maven 3.6+
+1. mvn clean test --file pom.xml
